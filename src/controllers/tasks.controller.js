@@ -1,15 +1,15 @@
 const db = require('../database')
 
-const getAllPokemon = async (req ,res)=>{
+const getAllPokemon = async (req ,res , next)=>{
     try{
         const AllPokemon = await db.query('SELECT * FROM pokemon')
         res.json(AllPokemon.rows)
     }catch(error){
-        console.log(error.message)
+        next(error)
     }
 }
 
-const getPokemon = async (req,res)=>{
+const getPokemon = async (req, res, next)=>{
     try{
         const {id } = req.params
         const OnePokemon = await db.query('SELECT * FROM pokemon WHERE id_pokemon = $1',[id])
@@ -22,7 +22,7 @@ const getPokemon = async (req,res)=>{
         res.json(OnePokemon.rows[0])
     }
     catch(error){
-        console.log(error.message)
+        next(error)
     }
 }
 
