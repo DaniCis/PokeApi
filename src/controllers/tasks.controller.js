@@ -1,15 +1,32 @@
 const db = require('../database')
 
-const getAllPokemon = async (req,res)=>{
-    res.send('Listado de pokemon')
-     /*const result = await db.query('Select NOW()')
-     console.log(result)
-     res.json(result.rows[0].now)*/
+const getAllPokemon = async (req ,res)=>{
+    try{
+        const AllPokemon = await db.query('SELECT * FROM pokemon')
+        res.json(AllPokemon.rows)
+    }catch(error){
+        console.log(error.message)
+    }
 }
 
 const getPokemon = async (req,res)=>{
-    res.send('un solo pokemon')
+    try{
+        const {id } = req.params
+        const OnePokemon = await db.query('SELECT * FROM pokemon WHERE id_pokemon = $1',[id])
+        
+        if(OnePokemon.rows.length === 0){
+            return res.status(404).json({
+                message:'Pokemon no encontrado'
+            })
+        }
+        res.json(OnePokemon.rows[0])
+    }
+    catch(error){
+        console.log(error.message)
+    }
 }
+
+
 module.exports ={
     getAllPokemon,
     getPokemon

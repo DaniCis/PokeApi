@@ -6,7 +6,9 @@ const taskRoutes = require('./routes/tasks.routes');
 const app = express();
 
 app.use(morgan('dev'))
+app.use(express.json())
 app.use(taskRoutes)
+
 
 
 app.listen(4000)

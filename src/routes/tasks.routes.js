@@ -4,6 +4,6 @@ const {getAllPokemon, getPokemon} = require('../controllers/tasks.controller')
 const router = Router();
 
 router.get('/pokemon', getAllPokemon)
-router.get('/pokemon/1', getPokemon)
+router.get('/pokemon/:id', getPokemon)
 
 module.exports = router;
