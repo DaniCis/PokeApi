@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
-const taskRoutes = require('./routes/tasks.routes');
+const taskRoutes = require('./routes/pokemon.routes');
 
 
 const app = express();
