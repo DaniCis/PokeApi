@@ -88,13 +88,45 @@
 					"pg": {
 						"generatedIdentity": "no"
 					}
+				},
+				{
+					"id": "09a068d0-a9c8-4d2c-a005-20e4acdba37a",
+					"name": "evolucion_pokemon",
+					"datatype": "boolean",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": null,
+					"list": false,
+					"after": "",
+					"pg": {
+						"generatedIdentity": "no"
+					}
+				},
+				{
+					"id": "eb0fc87d-b756-4346-afe5-a0fed9df7de7",
+					"name": "imagen_pokemon",
+					"datatype": "varchar",
+					"param": "100",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": null,
+					"list": false,
+					"after": "",
+					"pg": {
+						"generatedIdentity": "no"
+					}
 				}
 			],
 			"relations": [
 				"0337d5e4-a53e-4d68-b359-b23c2a6404ec",
-				"4e27d6ba-7ec9-442b-84bc-bd2c5aee17de",
-				"a5c930a4-98af-4ac9-9cd2-6df4cd08635d",
-				"ac5a2b9a-4337-42fa-9b2e-051ddaa12358"
+				"4e27d6ba-7ec9-442b-84bc-bd2c5aee17de"
 			],
 			"lines": [],
 			"keys": [
@@ -121,10 +153,10 @@
 				"schema": ""
 			},
 			"referencedItemId": "f48231a6-5d92-439e-ab18-23e09d2b94ef",
-			"x": 410,
-			"y": 290,
-			"gHeight": 124,
-			"gWidth": 276,
+			"x": 411,
+			"y": 306,
+			"gHeight": 160,
+			"gWidth": 311,
 			"color": "#f2f2f2",
 			"background": "#8bc34a",
 			"resized": false
@@ -154,7 +186,7 @@
 					"id": "65665d45-f51b-42d9-a88f-235eeb487f32",
 					"name": "nombre_tipo",
 					"datatype": "varchar",
-					"param": "40",
+					"param": "30",
 					"pk": false,
 					"nn": true,
 					"comment": "",
@@ -311,7 +343,7 @@
 					"id": "a4012fdd-6e85-44fb-accf-7736858854d9",
 					"name": "nombre_habilidad",
 					"datatype": "varchar",
-					"param": "40",
+					"param": "30",
 					"pk": false,
 					"nn": true,
 					"comment": "",
@@ -442,88 +474,6 @@
 			"color": "#ffffff",
 			"background": "#03a9f4",
 			"resized": false
-		},
-		"a28f8467-b141-4095-aee6-f9c4fbc312f1": {
-			"id": "a28f8467-b141-4095-aee6-f9c4fbc312f1",
-			"visible": true,
-			"name": "evolucion",
-			"desc": "",
-			"cols": [
-				{
-					"id": "0fca35df-3547-4f7c-8c18-83b37586b8f3",
-					"name": "pokemon_id_pokemon",
-					"datatype": "integer",
-					"pk": true,
-					"nn": true,
-					"comment": "",
-					"defaultvalue": "",
-					"data": "",
-					"collation": null,
-					"after": "",
-					"pg": {
-						"generatedIdentity": "no"
-					},
-					"fk": true,
-					"ref": "pokemon"
-				},
-				{
-					"id": "02af4426-02c3-4d94-bebb-c83400b0d4ba",
-					"name": "pokemon_id_fin",
-					"datatype": "integer",
-					"pk": true,
-					"nn": true,
-					"comment": "",
-					"defaultvalue": "",
-					"data": "",
-					"collation": null,
-					"after": "",
-					"pg": {
-						"generatedIdentity": "no"
-					},
-					"fk": true,
-					"ref": "pokemon"
-				}
-			],
-			"relations": [
-				"a5c930a4-98af-4ac9-9cd2-6df4cd08635d",
-				"ac5a2b9a-4337-42fa-9b2e-051ddaa12358"
-			],
-			"lines": [],
-			"keys": [
-				{
-					"id": "7045cb30-d694-4946-acce-19b489abdd79",
-					"name": "Primary key",
-					"isPk": true,
-					"using": "",
-					"cols": [
-						{
-							"id": "3c53bef3-ebe9-42ad-b30a-c0b3563972e4",
-							"colid": "0fca35df-3547-4f7c-8c18-83b37586b8f3"
-						},
-						{
-							"id": "23d2fb55-b44f-4ba1-aa72-4fea6b1e4813",
-							"colid": "02af4426-02c3-4d94-bebb-c83400b0d4ba"
-						}
-					]
-				}
-			],
-			"indexes": [],
-			"embeddable": false,
-			"generate": true,
-			"generateCustomCode": true,
-			"objectType": "table",
-			"pg": {
-				"rowsecurity": false,
-				"schema": ""
-			},
-			"referencedItemId": "a28f8467-b141-4095-aee6-f9c4fbc312f1",
-			"x": 411,
-			"y": 465,
-			"gHeight": 88,
-			"gWidth": 288,
-			"color": "#ffffff",
-			"background": "#03a9f4",
-			"resized": false
 		}
 	},
 	"relations": {
@@ -610,48 +560,6 @@
 			],
 			"generate": true,
 			"generateCustomCode": true
-		},
-		"a5c930a4-98af-4ac9-9cd2-6df4cd08635d": {
-			"id": "a5c930a4-98af-4ac9-9cd2-6df4cd08635d",
-			"visible": true,
-			"name": "pokemon_evolucion",
-			"desc": "",
-			"type": "identifying",
-			"parent_key": "aa17fc86-8617-4f1b-b525-e08cdedf900d",
-			"parent": "f48231a6-5d92-439e-ab18-23e09d2b94ef",
-			"child": "a28f8467-b141-4095-aee6-f9c4fbc312f1",
-			"c_mp": "true",
-			"c_mch": "true",
-			"cols": [
-				{
-					"id": "f851ca5f-5cf3-4f11-9e9c-161291e96a77",
-					"parentcol": "69c8999f-dd4b-4763-96f7-30f30f6c1cba",
-					"childcol": "0fca35df-3547-4f7c-8c18-83b37586b8f3"
-				}
-			],
-			"generate": true,
-			"generateCustomCode": true
-		},
-		"ac5a2b9a-4337-42fa-9b2e-051ddaa12358": {
-			"id": "ac5a2b9a-4337-42fa-9b2e-051ddaa12358",
-			"visible": true,
-			"name": "pokemon_evolucion",
-			"desc": "",
-			"type": "identifying",
-			"parent_key": "aa17fc86-8617-4f1b-b525-e08cdedf900d",
-			"parent": "f48231a6-5d92-439e-ab18-23e09d2b94ef",
-			"child": "a28f8467-b141-4095-aee6-f9c4fbc312f1",
-			"c_mp": "true",
-			"c_mch": "true",
-			"cols": [
-				{
-					"id": "c9160faa-ac39-4c6e-af48-4557995c3ef1",
-					"parentcol": "69c8999f-dd4b-4763-96f7-30f30f6c1cba",
-					"childcol": "02af4426-02c3-4d94-bebb-c83400b0d4ba"
-				}
-			],
-			"generate": true,
-			"generateCustomCode": true
 		}
 	},
 	"notes": {},
@@ -696,8 +604,8 @@
 			"includeSchema": "always",
 			"quotation": "if_needed"
 		},
-		"filePath": "C:\\Users\\Administrator\\Documents\\Cursos\\Kruger\\PokeApi\\Base de Datos\\ModeloBaseDatos.dmm",
-		"lastSaved": "15/10/2022",
+		"filePath": "C:\\Users\\Administrator\\Documents\\Cursos\\Kruger\\PokeApi\\database\\ModeloBaseDatos.dmm",
+		"lastSaved": "Mon Oct 17 2022 17:31:51 GMT-0500 (hora de Ecuador)",
 		"writeFileParam": false
 	},
 	"otherObjects": {},
@@ -716,18 +624,18 @@
 			"diagramItems": {
 				"f48231a6-5d92-439e-ab18-23e09d2b94ef": {
 					"referencedItemId": "f48231a6-5d92-439e-ab18-23e09d2b94ef",
-					"x": 411,
-					"y": 288,
-					"gHeight": 124,
-					"gWidth": 295,
+					"x": 416,
+					"y": 281,
+					"gHeight": 160,
+					"gWidth": 310,
 					"color": "#f2f2f2",
 					"background": "#8bc34a",
 					"resized": false
 				},
 				"fd965b1b-178b-40d4-b38a-87ad1e182bc4": {
 					"referencedItemId": "fd965b1b-178b-40d4-b38a-87ad1e182bc4",
-					"x": 81,
-					"y": 56,
+					"x": 71,
+					"y": 205,
 					"gHeight": 70,
 					"gWidth": 257,
 					"color": "#ffffff",
@@ -736,8 +644,8 @@
 				},
 				"11bbb77a-c727-4afe-b1cc-d0f5568dd8e8": {
 					"referencedItemId": "11bbb77a-c727-4afe-b1cc-d0f5568dd8e8",
-					"x": 76,
-					"y": 194,
+					"x": 62,
+					"y": 354,
 					"gHeight": 70,
 					"gWidth": 288,
 					"color": "#ffffff",
@@ -746,32 +654,22 @@
 				},
 				"8d3ff909-ff72-45a0-8c27-31b545b75083": {
 					"referencedItemId": "8d3ff909-ff72-45a0-8c27-31b545b75083",
-					"x": 757,
-					"y": 46,
+					"x": 835,
+					"y": 194,
 					"gHeight": 70,
-					"gWidth": 255,
+					"gWidth": 274,
 					"color": "#ffffff",
 					"background": "#9c27b0",
 					"resized": false
 				},
 				"b14a3c9a-9340-4ea4-b452-cdc9d90bcca3": {
 					"referencedItemId": "b14a3c9a-9340-4ea4-b452-cdc9d90bcca3",
-					"x": 760,
-					"y": 173,
+					"x": 843,
+					"y": 367,
 					"gHeight": 70,
 					"gWidth": 288,
 					"color": "#ffffff",
 					"background": "#00bcd4",
-					"resized": false
-				},
-				"a28f8467-b141-4095-aee6-f9c4fbc312f1": {
-					"referencedItemId": "a28f8467-b141-4095-aee6-f9c4fbc312f1",
-					"x": 414,
-					"y": 457,
-					"gHeight": 70,
-					"gWidth": 288,
-					"color": "#ffffff",
-					"background": "#ffeb3b",
 					"resized": false
 				}
 			},
@@ -787,12 +685,9 @@
 		"11bbb77a-c727-4afe-b1cc-d0f5568dd8e8",
 		"8d3ff909-ff72-45a0-8c27-31b545b75083",
 		"b14a3c9a-9340-4ea4-b452-cdc9d90bcca3",
-		"a28f8467-b141-4095-aee6-f9c4fbc312f1",
 		"0337d5e4-a53e-4d68-b359-b23c2a6404ec",
 		"52093dc1-7ba1-40de-af1d-6f8fd4702d00",
 		"4e27d6ba-7ec9-442b-84bc-bd2c5aee17de",
-		"bf4a81c6-9689-45e4-99b5-05b6058ee019",
-		"a5c930a4-98af-4ac9-9cd2-6df4cd08635d",
-		"ac5a2b9a-4337-42fa-9b2e-051ddaa12358"
+		"bf4a81c6-9689-45e4-99b5-05b6058ee019"
 	]
 }

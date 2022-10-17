@@ -27,7 +27,7 @@ export default function List() {
         {pokemons.map((pokemon, i) => (
           <Col>
             <Card>
-              <Card.Img variant="top" src="holder.js/100px160" />
+              <Card.Img variant="top" src={pokemon.imagen_pokemon} />
               <Card.Body>
                 <Card.Title>{pokemon.nombre_pokemon}</Card.Title>
                 <Card.Text>{pokemon.descripcion_pokemon}</Card.Text>
