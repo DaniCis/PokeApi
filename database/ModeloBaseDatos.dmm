@@ -1,0 +1,798 @@
+{
+	"tables": {
+		"f48231a6-5d92-439e-ab18-23e09d2b94ef": {
+			"id": "f48231a6-5d92-439e-ab18-23e09d2b94ef",
+			"visible": true,
+			"name": "pokemon",
+			"desc": "",
+			"cols": [
+				{
+					"id": "69c8999f-dd4b-4763-96f7-30f30f6c1cba",
+					"name": "id_pokemon",
+					"datatype": "integer",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": null,
+					"after": "",
+					"pg": {
+						"generatedIdentity": "no"
+					}
+				},
+				{
+					"id": "95c39f69-b961-472c-856f-173a8d736f6c",
+					"name": "nombre_pokemon",
+					"datatype": "varchar",
+					"param": "30",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": null,
+					"list": false,
+					"after": "",
+					"pg": {
+						"generatedIdentity": "no"
+					}
+				},
+				{
+					"id": "09ada788-76d6-4866-829d-5de4cb131243",
+					"name": "descripcion_pokemon",
+					"datatype": "varchar",
+					"param": "120",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": null,
+					"list": false,
+					"after": "",
+					"pg": {
+						"generatedIdentity": "no"
+					}
+				},
+				{
+					"id": "73f8cff4-1141-4ca2-95de-10b3826f3a3b",
+					"name": "altura_pokemon",
+					"datatype": "double precision",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": null,
+					"list": false,
+					"after": "",
+					"pg": {
+						"generatedIdentity": "no"
+					}
+				},
+				{
+					"id": "d0c36d56-fa58-4164-9b0e-b1b1dec5049e",
+					"name": "peso_pokemon",
+					"datatype": "double precision",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": null,
+					"list": false,
+					"after": "",
+					"pg": {
+						"generatedIdentity": "no"
+					}
+				}
+			],
+			"relations": [
+				"0337d5e4-a53e-4d68-b359-b23c2a6404ec",
+				"4e27d6ba-7ec9-442b-84bc-bd2c5aee17de",
+				"a5c930a4-98af-4ac9-9cd2-6df4cd08635d",
+				"ac5a2b9a-4337-42fa-9b2e-051ddaa12358"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "aa17fc86-8617-4f1b-b525-e08cdedf900d",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "",
+					"cols": [
+						{
+							"id": "52000b57-cffd-4705-904c-b73ac06ce326",
+							"colid": "69c8999f-dd4b-4763-96f7-30f30f6c1cba"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"objectType": "table",
+			"pg": {
+				"rowsecurity": false,
+				"schema": ""
+			},
+			"referencedItemId": "f48231a6-5d92-439e-ab18-23e09d2b94ef",
+			"x": 410,
+			"y": 290,
+			"gHeight": 124,
+			"gWidth": 276,
+			"color": "#f2f2f2",
+			"background": "#8bc34a",
+			"resized": false
+		},
+		"fd965b1b-178b-40d4-b38a-87ad1e182bc4": {
+			"id": "fd965b1b-178b-40d4-b38a-87ad1e182bc4",
+			"visible": true,
+			"name": "tipo",
+			"desc": "",
+			"cols": [
+				{
+					"id": "bf719785-5b04-4c45-b7c7-2beb3d2e6d52",
+					"name": "id_tipo",
+					"datatype": "integer",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": null,
+					"after": "",
+					"pg": {
+						"generatedIdentity": "no"
+					}
+				},
+				{
+					"id": "65665d45-f51b-42d9-a88f-235eeb487f32",
+					"name": "nombre_tipo",
+					"datatype": "varchar",
+					"param": "40",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": null,
+					"list": false,
+					"after": "",
+					"pg": {
+						"generatedIdentity": "no"
+					}
+				}
+			],
+			"relations": [
+				"52093dc1-7ba1-40de-af1d-6f8fd4702d00"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "14576844-0297-4632-b543-20fa556152b1",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "",
+					"cols": [
+						{
+							"id": "7c79f432-f943-4147-8465-837b2a00230e",
+							"colid": "bf719785-5b04-4c45-b7c7-2beb3d2e6d52"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"objectType": "table",
+			"pg": {
+				"rowsecurity": false,
+				"schema": ""
+			},
+			"referencedItemId": "fd965b1b-178b-40d4-b38a-87ad1e182bc4",
+			"x": 452,
+			"y": 450,
+			"gHeight": 70,
+			"gWidth": 257,
+			"color": "#ffffff",
+			"background": "#ff9800",
+			"resized": false
+		},
+		"11bbb77a-c727-4afe-b1cc-d0f5568dd8e8": {
+			"id": "11bbb77a-c727-4afe-b1cc-d0f5568dd8e8",
+			"visible": true,
+			"name": "tipo_pokemon",
+			"desc": "",
+			"cols": [
+				{
+					"id": "3c77e5c7-8daa-479f-9f83-8ec36d1281c8",
+					"name": "pokemon_id_pokemon",
+					"datatype": "integer",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": null,
+					"after": "",
+					"pg": {
+						"generatedIdentity": "no"
+					},
+					"fk": true,
+					"ref": "pokemon"
+				},
+				{
+					"id": "1d641c83-e1c1-4512-ad14-2ca37f7eca86",
+					"name": "tipo_id_tipo",
+					"datatype": "integer",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": null,
+					"after": "",
+					"pg": {
+						"generatedIdentity": "no"
+					},
+					"fk": true,
+					"ref": "tipo"
+				}
+			],
+			"relations": [
+				"0337d5e4-a53e-4d68-b359-b23c2a6404ec",
+				"52093dc1-7ba1-40de-af1d-6f8fd4702d00"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "70e9834d-66d8-4949-9db1-6c86e28e8638",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "",
+					"cols": [
+						{
+							"id": "eaf7f0ef-1e37-48ad-8a1b-0738844bc8ca",
+							"colid": "3c77e5c7-8daa-479f-9f83-8ec36d1281c8"
+						},
+						{
+							"id": "2056a71e-c952-4767-9660-9b39ebd3a0ed",
+							"colid": "1d641c83-e1c1-4512-ad14-2ca37f7eca86"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"objectType": "table",
+			"pg": {
+				"rowsecurity": false,
+				"schema": ""
+			},
+			"referencedItemId": "11bbb77a-c727-4afe-b1cc-d0f5568dd8e8",
+			"x": 135,
+			"y": 304,
+			"gHeight": 52,
+			"gWidth": 288,
+			"color": "#ffffff",
+			"background": "#03a9f4",
+			"resized": false
+		},
+		"8d3ff909-ff72-45a0-8c27-31b545b75083": {
+			"id": "8d3ff909-ff72-45a0-8c27-31b545b75083",
+			"visible": true,
+			"name": "habilidad",
+			"desc": "",
+			"cols": [
+				{
+					"id": "cc8413ae-c2bf-4e7d-89e3-99094bf74230",
+					"name": "id_habilidad",
+					"datatype": "integer",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": null,
+					"after": "",
+					"pg": {
+						"generatedIdentity": "no"
+					}
+				},
+				{
+					"id": "a4012fdd-6e85-44fb-accf-7736858854d9",
+					"name": "nombre_habilidad",
+					"datatype": "varchar",
+					"param": "40",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": null,
+					"list": false,
+					"after": "",
+					"pg": {
+						"generatedIdentity": "no"
+					}
+				}
+			],
+			"relations": [
+				"bf4a81c6-9689-45e4-99b5-05b6058ee019"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "2b0899e7-0d3d-4274-b87d-c5808633404a",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "",
+					"cols": [
+						{
+							"id": "e3e58d4a-7c63-4738-9346-f3053370d6b7",
+							"colid": "cc8413ae-c2bf-4e7d-89e3-99094bf74230"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"objectType": "table",
+			"pg": {
+				"rowsecurity": false,
+				"schema": ""
+			},
+			"referencedItemId": "8d3ff909-ff72-45a0-8c27-31b545b75083",
+			"x": 762,
+			"y": 278,
+			"gHeight": 70,
+			"gWidth": 255,
+			"color": "#ffffff",
+			"background": "#03a9f4",
+			"resized": false
+		},
+		"b14a3c9a-9340-4ea4-b452-cdc9d90bcca3": {
+			"id": "b14a3c9a-9340-4ea4-b452-cdc9d90bcca3",
+			"visible": true,
+			"name": "habilidad_pokemon",
+			"desc": "",
+			"cols": [
+				{
+					"id": "e8165533-a2c0-457c-b2a9-24a8fa863875",
+					"name": "pokemon_id_pokemon",
+					"datatype": "integer",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": null,
+					"after": "",
+					"pg": {
+						"generatedIdentity": "no"
+					},
+					"fk": true,
+					"ref": "pokemon"
+				},
+				{
+					"id": "deeb0231-564b-488e-bb5d-fbfe7b028ea3",
+					"name": "habilidad_id_habilidad",
+					"datatype": "integer",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": null,
+					"after": "",
+					"pg": {
+						"generatedIdentity": "no"
+					},
+					"fk": true,
+					"ref": "habilidad"
+				}
+			],
+			"relations": [
+				"4e27d6ba-7ec9-442b-84bc-bd2c5aee17de",
+				"bf4a81c6-9689-45e4-99b5-05b6058ee019"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "0b0b8785-90e5-4d9d-98dc-c5895924851e",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "",
+					"cols": [
+						{
+							"id": "54ca3f0c-5613-48bf-af05-b793d8d016d4",
+							"colid": "e8165533-a2c0-457c-b2a9-24a8fa863875"
+						},
+						{
+							"id": "523260fc-9601-4c7d-8fdf-629ed4378985",
+							"colid": "deeb0231-564b-488e-bb5d-fbfe7b028ea3"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"objectType": "table",
+			"pg": {
+				"rowsecurity": false,
+				"schema": ""
+			},
+			"referencedItemId": "b14a3c9a-9340-4ea4-b452-cdc9d90bcca3",
+			"x": 808,
+			"y": 139,
+			"gHeight": 52,
+			"gWidth": 288,
+			"color": "#ffffff",
+			"background": "#03a9f4",
+			"resized": false
+		},
+		"a28f8467-b141-4095-aee6-f9c4fbc312f1": {
+			"id": "a28f8467-b141-4095-aee6-f9c4fbc312f1",
+			"visible": true,
+			"name": "evolucion",
+			"desc": "",
+			"cols": [
+				{
+					"id": "0fca35df-3547-4f7c-8c18-83b37586b8f3",
+					"name": "pokemon_id_pokemon",
+					"datatype": "integer",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": null,
+					"after": "",
+					"pg": {
+						"generatedIdentity": "no"
+					},
+					"fk": true,
+					"ref": "pokemon"
+				},
+				{
+					"id": "02af4426-02c3-4d94-bebb-c83400b0d4ba",
+					"name": "pokemon_id_fin",
+					"datatype": "integer",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"collation": null,
+					"after": "",
+					"pg": {
+						"generatedIdentity": "no"
+					},
+					"fk": true,
+					"ref": "pokemon"
+				}
+			],
+			"relations": [
+				"a5c930a4-98af-4ac9-9cd2-6df4cd08635d",
+				"ac5a2b9a-4337-42fa-9b2e-051ddaa12358"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "7045cb30-d694-4946-acce-19b489abdd79",
+					"name": "Primary key",
+					"isPk": true,
+					"using": "",
+					"cols": [
+						{
+							"id": "3c53bef3-ebe9-42ad-b30a-c0b3563972e4",
+							"colid": "0fca35df-3547-4f7c-8c18-83b37586b8f3"
+						},
+						{
+							"id": "23d2fb55-b44f-4ba1-aa72-4fea6b1e4813",
+							"colid": "02af4426-02c3-4d94-bebb-c83400b0d4ba"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"objectType": "table",
+			"pg": {
+				"rowsecurity": false,
+				"schema": ""
+			},
+			"referencedItemId": "a28f8467-b141-4095-aee6-f9c4fbc312f1",
+			"x": 411,
+			"y": 465,
+			"gHeight": 88,
+			"gWidth": 288,
+			"color": "#ffffff",
+			"background": "#03a9f4",
+			"resized": false
+		}
+	},
+	"relations": {
+		"0337d5e4-a53e-4d68-b359-b23c2a6404ec": {
+			"id": "0337d5e4-a53e-4d68-b359-b23c2a6404ec",
+			"visible": true,
+			"name": "pokemon_tipo_pokemon",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "aa17fc86-8617-4f1b-b525-e08cdedf900d",
+			"parent": "f48231a6-5d92-439e-ab18-23e09d2b94ef",
+			"child": "11bbb77a-c727-4afe-b1cc-d0f5568dd8e8",
+			"c_mp": "true",
+			"c_mch": "true",
+			"cols": [
+				{
+					"id": "93ee6f5c-621f-4ba0-8718-deaf71eca5bd",
+					"parentcol": "69c8999f-dd4b-4763-96f7-30f30f6c1cba",
+					"childcol": "3c77e5c7-8daa-479f-9f83-8ec36d1281c8"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		},
+		"52093dc1-7ba1-40de-af1d-6f8fd4702d00": {
+			"id": "52093dc1-7ba1-40de-af1d-6f8fd4702d00",
+			"visible": true,
+			"name": "tipo_tipo_pokemon",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "14576844-0297-4632-b543-20fa556152b1",
+			"parent": "fd965b1b-178b-40d4-b38a-87ad1e182bc4",
+			"child": "11bbb77a-c727-4afe-b1cc-d0f5568dd8e8",
+			"c_mp": "true",
+			"c_mch": "true",
+			"cols": [
+				{
+					"id": "a39932d5-1548-47f9-af2c-01e38160c4cc",
+					"parentcol": "bf719785-5b04-4c45-b7c7-2beb3d2e6d52",
+					"childcol": "1d641c83-e1c1-4512-ad14-2ca37f7eca86"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		},
+		"4e27d6ba-7ec9-442b-84bc-bd2c5aee17de": {
+			"id": "4e27d6ba-7ec9-442b-84bc-bd2c5aee17de",
+			"visible": true,
+			"name": "pokemon_habilidad_pokemon",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "aa17fc86-8617-4f1b-b525-e08cdedf900d",
+			"parent": "f48231a6-5d92-439e-ab18-23e09d2b94ef",
+			"child": "b14a3c9a-9340-4ea4-b452-cdc9d90bcca3",
+			"c_mp": "true",
+			"c_mch": "true",
+			"cols": [
+				{
+					"id": "dd8adc42-b618-4c30-8ded-4c45f7b07195",
+					"parentcol": "69c8999f-dd4b-4763-96f7-30f30f6c1cba",
+					"childcol": "e8165533-a2c0-457c-b2a9-24a8fa863875"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		},
+		"bf4a81c6-9689-45e4-99b5-05b6058ee019": {
+			"id": "bf4a81c6-9689-45e4-99b5-05b6058ee019",
+			"visible": true,
+			"name": "habilidad_habilidad_pokemon",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "2b0899e7-0d3d-4274-b87d-c5808633404a",
+			"parent": "8d3ff909-ff72-45a0-8c27-31b545b75083",
+			"child": "b14a3c9a-9340-4ea4-b452-cdc9d90bcca3",
+			"c_mp": "true",
+			"c_mch": "true",
+			"cols": [
+				{
+					"id": "f6c3bf2c-a3a7-4526-82fc-216b76417d80",
+					"parentcol": "cc8413ae-c2bf-4e7d-89e3-99094bf74230",
+					"childcol": "deeb0231-564b-488e-bb5d-fbfe7b028ea3"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		},
+		"a5c930a4-98af-4ac9-9cd2-6df4cd08635d": {
+			"id": "a5c930a4-98af-4ac9-9cd2-6df4cd08635d",
+			"visible": true,
+			"name": "pokemon_evolucion",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "aa17fc86-8617-4f1b-b525-e08cdedf900d",
+			"parent": "f48231a6-5d92-439e-ab18-23e09d2b94ef",
+			"child": "a28f8467-b141-4095-aee6-f9c4fbc312f1",
+			"c_mp": "true",
+			"c_mch": "true",
+			"cols": [
+				{
+					"id": "f851ca5f-5cf3-4f11-9e9c-161291e96a77",
+					"parentcol": "69c8999f-dd4b-4763-96f7-30f30f6c1cba",
+					"childcol": "0fca35df-3547-4f7c-8c18-83b37586b8f3"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		},
+		"ac5a2b9a-4337-42fa-9b2e-051ddaa12358": {
+			"id": "ac5a2b9a-4337-42fa-9b2e-051ddaa12358",
+			"visible": true,
+			"name": "pokemon_evolucion",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "aa17fc86-8617-4f1b-b525-e08cdedf900d",
+			"parent": "f48231a6-5d92-439e-ab18-23e09d2b94ef",
+			"child": "a28f8467-b141-4095-aee6-f9c4fbc312f1",
+			"c_mp": "true",
+			"c_mch": "true",
+			"cols": [
+				{
+					"id": "c9160faa-ac39-4c6e-af48-4557995c3ef1",
+					"parentcol": "69c8999f-dd4b-4763-96f7-30f30f6c1cba",
+					"childcol": "02af4426-02c3-4d94-bebb-c83400b0d4ba"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true
+		}
+	},
+	"notes": {},
+	"lines": {},
+	"model": {
+		"name": "PokeApi",
+		"id": "8b6f3551-1047-4c24-a96f-2b8413fd04c9",
+		"activeDiagram": "b4dd4851-01e3-4d26-ad7b-170f1f36dd4b",
+		"desc": "",
+		"path": "",
+		"type": "PG",
+		"version": 1,
+		"parentTableInFkCols": true,
+		"caseConvention": "under",
+		"replaceSpace": "_",
+		"color": "transparent",
+		"sideSelections": true,
+		"isDirty": true,
+		"storedin": {
+			"major": 4,
+			"minor": 1,
+			"extra": 0
+		},
+		"embeddedInParentsIsDisplayed": true,
+		"schemaContainerIsDisplayed": false,
+		"def_coltopk": true,
+		"pg": {
+			"schema": ""
+		},
+		"sqlSettings": {
+			"wrapLines": true,
+			"wrapOffset": 80,
+			"indent": true,
+			"indentationString": "spaces",
+			"indentationSize": 2,
+			"limitItemsOnLine": true,
+			"maxListItemsOnLine": 3,
+			"statementDelimiter": ";",
+			"routineDelimiter": ";",
+			"keywordCase": "upper",
+			"identiferCase": "original",
+			"includeSchema": "always",
+			"quotation": "if_needed"
+		},
+		"filePath": "C:\\Users\\Administrator\\Documents\\Cursos\\Kruger\\PokeApi\\Base de Datos\\ModeloBaseDatos.dmm",
+		"lastSaved": "15/10/2022",
+		"writeFileParam": false
+	},
+	"otherObjects": {},
+	"diagrams": {
+		"b4dd4851-01e3-4d26-ad7b-170f1f36dd4b": {
+			"name": "Main Diagram",
+			"description": "",
+			"id": "b4dd4851-01e3-4d26-ad7b-170f1f36dd4b",
+			"keysgraphics": true,
+			"linegraphics": "detailed",
+			"zoom": 1,
+			"background": "#555555",
+			"lineColor": "transparent",
+			"isOpen": true,
+			"main": true,
+			"diagramItems": {
+				"f48231a6-5d92-439e-ab18-23e09d2b94ef": {
+					"referencedItemId": "f48231a6-5d92-439e-ab18-23e09d2b94ef",
+					"x": 411,
+					"y": 288,
+					"gHeight": 124,
+					"gWidth": 295,
+					"color": "#f2f2f2",
+					"background": "#8bc34a",
+					"resized": false
+				},
+				"fd965b1b-178b-40d4-b38a-87ad1e182bc4": {
+					"referencedItemId": "fd965b1b-178b-40d4-b38a-87ad1e182bc4",
+					"x": 81,
+					"y": 56,
+					"gHeight": 70,
+					"gWidth": 257,
+					"color": "#ffffff",
+					"background": "#ff9800",
+					"resized": false
+				},
+				"11bbb77a-c727-4afe-b1cc-d0f5568dd8e8": {
+					"referencedItemId": "11bbb77a-c727-4afe-b1cc-d0f5568dd8e8",
+					"x": 76,
+					"y": 194,
+					"gHeight": 70,
+					"gWidth": 288,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false
+				},
+				"8d3ff909-ff72-45a0-8c27-31b545b75083": {
+					"referencedItemId": "8d3ff909-ff72-45a0-8c27-31b545b75083",
+					"x": 757,
+					"y": 46,
+					"gHeight": 70,
+					"gWidth": 255,
+					"color": "#ffffff",
+					"background": "#9c27b0",
+					"resized": false
+				},
+				"b14a3c9a-9340-4ea4-b452-cdc9d90bcca3": {
+					"referencedItemId": "b14a3c9a-9340-4ea4-b452-cdc9d90bcca3",
+					"x": 760,
+					"y": 173,
+					"gHeight": 70,
+					"gWidth": 288,
+					"color": "#ffffff",
+					"background": "#00bcd4",
+					"resized": false
+				},
+				"a28f8467-b141-4095-aee6-f9c4fbc312f1": {
+					"referencedItemId": "a28f8467-b141-4095-aee6-f9c4fbc312f1",
+					"x": 414,
+					"y": 457,
+					"gHeight": 70,
+					"gWidth": 288,
+					"color": "#ffffff",
+					"background": "#ffeb3b",
+					"resized": false
+				}
+			},
+			"scroll": {
+				"x": 0,
+				"y": 0
+			}
+		}
+	},
+	"order": [
+		"f48231a6-5d92-439e-ab18-23e09d2b94ef",
+		"fd965b1b-178b-40d4-b38a-87ad1e182bc4",
+		"11bbb77a-c727-4afe-b1cc-d0f5568dd8e8",
+		"8d3ff909-ff72-45a0-8c27-31b545b75083",
+		"b14a3c9a-9340-4ea4-b452-cdc9d90bcca3",
+		"a28f8467-b141-4095-aee6-f9c4fbc312f1",
+		"0337d5e4-a53e-4d68-b359-b23c2a6404ec",
+		"52093dc1-7ba1-40de-af1d-6f8fd4702d00",
+		"4e27d6ba-7ec9-442b-84bc-bd2c5aee17de",
+		"bf4a81c6-9689-45e4-99b5-05b6058ee019",
+		"a5c930a4-98af-4ac9-9cd2-6df4cd08635d",
+		"ac5a2b9a-4337-42fa-9b2e-051ddaa12358"
+	]
+}
