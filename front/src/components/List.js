@@ -1,24 +1,42 @@
 import { useEffect, useState } from "react"
 import pokemonList from '../apis/pokemonApi'
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
 
 export default function List() {
 
-  const [pokemon,setPokemon] = useState()
+  const [pokemons,setPokemons] = useState([])
    
   useEffect(()=>{
-    async function getPokemon(){
+    async function getPokemons(){
       try{
         const response = await pokemonList.get("/");
-        setPokemon(response.data)
+        setPokemons(response.data)
         console.log(response.data)
       }catch(err){
-
       }
     }
-    getPokemon()
+    getPokemons()
   },[])
 
   return (
-    <> Cards main</>
+    <div>
+      <Row xs={1} md={2} lg={4} className="g-4">
+        {pokemons.map((pokemon, idx) => (
+          <Col>
+            <Card>
+              <Card.Img variant="top" src="holder.js/100px160" />
+              <Card.Body>
+                <Card.Title>{pokemon.nombre_pokemon}</Card.Title>
+                <Card.Text>{pokemon.descripcion_pokemon}</Card.Text>
+                <Button variant="primary" size='sm'>Ver Detalles</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </div>
   )
 }
