@@ -5,7 +5,13 @@ export default function Navigation() {
     <div>
       <Navbar collapseOnSelect fixed='top' expand='sm' variant='primary' >
         <Container>
-          <Navbar.Brand>Poke Api</Navbar.Brand>
+          <Navbar.Brand><img
+              src="/logo_transparent.png"
+              width="160"
+              height="100"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            /></Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse>
             <Nav>

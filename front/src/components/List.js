@@ -24,14 +24,14 @@ export default function List() {
   return (
     <div>
       <Row xs={1} md={2} lg={4} className="g-4">
-        {pokemons.map((pokemon, idx) => (
+        {pokemons.map((pokemon, i) => (
           <Col>
             <Card>
               <Card.Img variant="top" src="holder.js/100px160" />
               <Card.Body>
                 <Card.Title>{pokemon.nombre_pokemon}</Card.Title>
                 <Card.Text>{pokemon.descripcion_pokemon}</Card.Text>
-                <Button variant="primary" size='sm'>Ver Detalles</Button>
+                <Button variant="info" size='sm'>Ver Detalles</Button>
               </Card.Body>
             </Card>
           </Col>
