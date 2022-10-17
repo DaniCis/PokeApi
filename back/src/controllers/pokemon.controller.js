@@ -61,12 +61,20 @@ const getPokemonHabilidad = async (req , res, next) =>{
 const getPokemonEvolucion = async (req , res, next) =>{
     try{
         const {id } = req.params
-        const evolucion = await db.query('SELECT nombre_habilidad FROM pokemon '+
-        'INNER JOIN habilidad_pokemon h ON id_pokemon = h.pokemon_id_pokemon '+
-        'INNER JOIN habilidad ON h.habilidad_id_habilidad = id_habilidad '+
+        const evolucion = await db.query('SELECT * FROM evolucion '+
         'WHERE id_pokemon = $1 ',[id])
         res.json(evolucion.rows)
     }catch(error){
+        next(error)
+    }
+}
+const searchPokemon = async (req, res, next) =>{
+    try{
+        const { nom } = req.params
+        const busqueda = await db.query("SELECT * From pokemon WHERE nombre_pokemon LIKE $1",[`%${nom}%`])
+        res.json(busqueda.rows)
+        console.log(nom)
+    }catch(err){
         next(error)
     }
 }
@@ -76,5 +84,6 @@ module.exports ={
     getPokemon,
     getPokemonTipo,
     getPokemonHabilidad,
-    getPokemonEvolucion
+    getPokemonEvolucion,
+    searchPokemon
 }

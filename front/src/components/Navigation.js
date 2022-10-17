@@ -1,6 +1,6 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
 
-export default function navbar() {
+export default function Navigation() {
   return (
     <div>
       <Navbar collapseOnSelect fixed='top' expand='sm' variant='primary' >

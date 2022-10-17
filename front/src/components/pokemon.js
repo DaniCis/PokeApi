@@ -1,4 +1,4 @@
-export default function pokemon() {
+export default function Pokemon() {
   return (
     <div>Un pokemon</div>
   )
