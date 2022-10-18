@@ -3,12 +3,12 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 export default function Navigation() {
   return (
     <div>
-      <Navbar collapseOnSelect fixed='top' expand='sm' variant='primary' >
+      <Navbar collapseOnSelect  expand='sm' variant='primary' >
         <Container>
           <Navbar.Brand><img
               src="/logo_transparent.png"
-              width="160"
-              height="100"
+              width="150"
+              height="80"
               className="d-inline-block align-top"
               alt="React Bootstrap logo"
             /></Navbar.Brand>

@@ -13,7 +13,7 @@ export default function App() {
       <Container>
         <Routes>
           <Route path="/" element={<Main/>} />
-          <Route path="/pokemon/new" element={<Pokemon/>} />
+          <Route path="/pokemon/:id" element={<Pokemon/>} />
         </Routes>
       </Container>
     </BrowserRouter>

@@ -2,8 +2,18 @@ const db = require('../database')
 
 const getAllPokemon = async (req ,res , next)=>{
     try{
-        const AllPokemon = await db.query('SELECT id_pokemon, nombre_pokemon, descripcion_pokemon, imagen_pokemon FROM pokemon ')
+        const AllPokemon = await db.query('SELECT id_pokemon, nombre_pokemon, descripcion_pokemon, imagen_pokemon FROM pokemon')
         res.status(200).json(AllPokemon.rows)
+    }catch(error){
+        next(error)
+    }
+}
+
+const getTenPokemon = async (req ,res , next)=>{
+    try{
+        const TenPokemon = await db.query('SELECT id_pokemon, nombre_pokemon, descripcion_pokemon, imagen_pokemon FROM pokemon'+
+        ' ORDER BY RANDOM() LIMIT 10')
+        res.status(200).json(TenPokemon.rows)
     }catch(error){
         next(error)
     }
@@ -12,8 +22,8 @@ const getAllPokemon = async (req ,res , next)=>{
 const getPokemon = async (req, res, next)=>{
     try{
         const { id } = req.params
-        const OnePokemon = await db.query('SELECT id_pokemon, nombre_pokemon, descripcion_pokemon,'+
-        'altura_pokemon, peso_pokemon, nombre_habilidad, nombre_tipo FROM pokemon '+
+        const OnePokemon = await db.query('SELECT id_pokemon, nombre_pokemon, descripcion_pokemon, imagen_pokemon,'+
+        'altura_pokemon, peso_pokemon, nombre_habilidad, nombre_tipo, evolucion_pokemon FROM pokemon '+
         'INNER JOIN tipo_pokemon t ON id_pokemon = t.pokemon_id_pokemon '+ 
         'INNER JOIN tipo ON t.tipo_id_tipo = id_tipo '+
         'INNER JOIN habilidad_pokemon h ON id_pokemon = h.pokemon_id_pokemon '+
@@ -58,32 +68,21 @@ const getPokemonHabilidad = async (req , res, next) =>{
     }
 }
 
-const getPokemonEvolucion = async (req , res, next) =>{
-    try{
-        const {id } = req.params
-        const evolucion = await db.query('SELECT * FROM evolucion '+
-        'WHERE id_pokemon = $1 ',[id])
-        res.json(evolucion.rows)
-    }catch(error){
-        next(error)
-    }
-}
 const searchPokemon = async (req, res, next) =>{
     try{
         const { nom } = req.params
         const busqueda = await db.query("SELECT * From pokemon WHERE nombre_pokemon LIKE $1",[`%${nom}%`])
         res.json(busqueda.rows)
-        console.log(nom)
-    }catch(err){
+    }catch(error){
         next(error)
     }
 }
 
 module.exports ={
     getAllPokemon,
+    getTenPokemon,
     getPokemon,
     getPokemonTipo,
     getPokemonHabilidad,
-    getPokemonEvolucion,
-    searchPokemon
+    searchPokemon,
 }
