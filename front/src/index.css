@@ -14,7 +14,7 @@ code {
 
 /*navegacion*/
 .nav{
-  background-color: #2e97b7;
+  background-color: #43a1be;
 }
 
 
@@ -25,11 +25,15 @@ code {
 
 .card{
   background-color: #efefefad!important;
-  border-color: rgb(244, 244, 244)!important;
+  border-color: rgb(239, 239, 239)!important;
+  box-shadow: 23px 19px 28px -14px rgba(0,0,0,0.1);
 }
-
+.card-body-btn{
+  display: flex;
+  flex-direction: column;
+}
 .card-img{
-  max-width: 70%;
+  max-width: 70%; 
   display: block;
   margin: auto;
 }
@@ -40,9 +44,15 @@ code {
   padding: 0.5em 0;
   background-color: rgb(255, 255, 255);
 }
+.card-text{
+  padding: 0.5em 0;
+}
 
 .card-btn{
   background-color: #8fd053!important;
   border-color: #8fd053!important;
   color: rgb(255, 255, 255)!important;
+}
+.card-btn:hover{
+  background-color: #a5e569!important;
 }
