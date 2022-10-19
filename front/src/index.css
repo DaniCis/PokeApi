@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*navegacion*/
+.nav{
+  background-color: #2e97b7;
+}
+
+
+/*Cards*/
+.card-container{
+  padding: 2em 0;
+}
+
+.card{
+  background-color: #efefefad!important;
+  border-color: rgb(244, 244, 244)!important;
+}
+
+.card-img{
+  max-width: 70%;
+  display: block;
+  margin: auto;
+}
+
+.card-title{
+  text-align: center;
+  text-transform: capitalize;
+  padding: 0.5em 0;
+  background-color: rgb(255, 255, 255);
+}
+
+.card-btn{
+  background-color: #8fd053!important;
+  border-color: #8fd053!important;
+  color: rgb(255, 255, 255)!important;
+}

@@ -11,6 +11,7 @@ export default function Pokemon() {
   //const navigate = useNavigate()
   const [pokemon, setPokemon] = useState([])
 
+
   useEffect(()=>{
     async function getPokemon(){
       try{
@@ -30,8 +31,6 @@ export default function Pokemon() {
       <Container>
         <Row>
           <Col md='6'>
-          <p>{pokemon[0].nombre_pokemon}</p>
-          <img src={pokemon[0].imagen_pokemon} alt={pokemon[0].nombre_pokemon}></img>
           </Col>
         </Row>
         <Row>
