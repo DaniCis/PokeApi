@@ -17,6 +17,15 @@ code {
   background-color: #43a1be;
 }
 
+/*Search*/
+.searchContainer{
+  display: flex;
+  flex-direction: row;
+}
+.search{
+  padding: 2em 0 0.5em; 
+  justify-content: flex-end;
+}
 
 /*Cards*/
 .card-container{
@@ -42,7 +51,6 @@ code {
   text-align: center;
   text-transform: capitalize;
   padding: 0.5em 0;
-  background-color: rgb(255, 255, 255);
 }
 .card-text{
   padding: 0.5em 0;
