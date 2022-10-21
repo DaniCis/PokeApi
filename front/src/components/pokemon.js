@@ -12,14 +12,13 @@ export default function Pokemon() {
   const [pokemonType, setPokemonType] = useState([])
   const [pokemonAbility, setPokemonAbility] = useState([])
   const [isEvolved, setEvolved] = useState(false)
-  
-  let evoluciones = []
+  const [pokemonEvolution, setPokemonEvolution] = useState([])
 
   useEffect(()=>{
     getPokemonDetail(id)
     getPokemonType(id)
     getPokemonAbility(id)
-    verificarEvolucion(id)
+    getPokemonEvolution(id)
   },[id])
 
   async function getPokemonDetail(id){
@@ -32,16 +31,33 @@ export default function Pokemon() {
     }
   }
 
-  async function verificarEvolucion(id){
+  async function getPokemonEvolution(id){
     try{
-      if(isEvolved){
-        evoluciones.push(pokemonDetail)
+      const idNuevo = parseInt(id,10)
+      const response = await pokemonApi.get(`/pokemon/${idNuevo}`)
+      if(response.data[0].evolucion_pokemon){
+        pokemonEvolution.push(response.data[0])
+        getPokemonEvolution(idNuevo+1)
+      }else{
+        pokemonEvolution.push(response.data[0])
       }
-      console.log(evoluciones)
+      var temporal  = removeDuplicates(pokemonEvolution, "id_pokemon")
+      setPokemonEvolution(temporal)
     }catch(err){
       console.log(err.message)
     }
   }
+
+  function removeDuplicates(originalArray, prop) {
+    var newArr = [];
+    var oldArr  = {};
+    for(var i in originalArray)
+      oldArr[originalArray[i][prop]] = originalArray[i];
+    for(i in oldArr) 
+      newArr.push(oldArr[i]);
+    return newArr;
+  }
+
   async function getPokemonType(id){
     try{
       const response = await pokemonApi.get(`/type/${id}`)
@@ -114,17 +130,20 @@ export default function Pokemon() {
         <Container>
           <h3>Evolutions</h3>
           <Row xs={1} md={2} lg={3} className="g-4">
-            <Col>
+          {pokemonEvolution.map((pokemon, key) => (
+            <div className='evolve-card' key={pokemon.id_pokemon}>
               <Card className="card">
-                <Card.Img className='card-img' variant="top" src={pokemonDetail.imagen_pokemon} />
+                <Card.Img className='card-img' variant="top" src={pokemon.imagen_pokemon} />
                 <Card.Body>
-                  <Card.Title className="card-title">{pokemonDetail.nombre_pokemon}</Card.Title>
+                  <Card.Title className="card-title">{pokemon.nombre_pokemon}</Card.Title>
                   <div className="card-body-btn">
                     <Button className='card-btn' >Ver Detalles</Button>
                   </div>
                 </Card.Body>
               </Card>
-            </Col>
+            <ArrowRight className='arrow' color="brown" size={96}/>
+            </div>
+          ))}
           </Row>
         </Container>
         ) : (

@@ -173,3 +173,10 @@ code {
 .card-btn:hover{
   background-color: #a5e569!important;
 }
+
+/*evolution*/
+.evolve-card{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}

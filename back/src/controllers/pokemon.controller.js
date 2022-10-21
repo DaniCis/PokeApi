@@ -68,16 +68,6 @@ const getPokemonHabilidad = async (req , res, next) =>{
     }
 }
 
-const getPokemonEvolve = async (req, res, next) =>{
-    try{
-        const {id } = req.params
-        const evolved = await db.query('SELECT evolucion_pokemon FROM pokemon '+
-        'WHERE id_pokemon = $1 ',[id])
-        res.status(200).json(evolved.rows)
-    }catch(error){
-        next(error)
-    }
-}
 
 const searchPokemon = async (req, res, next) =>{
     try{
@@ -96,5 +86,4 @@ module.exports ={
     getPokemonTipo,
     getPokemonHabilidad,
     searchPokemon,
-    getPokemonEvolve,
 }
