@@ -12,7 +12,116 @@ code {
     monospace;
 }
 
-/*navegacion*/
+/*types*/
+.badge-type{
+  --bs-badge-padding-x: 1.5em;
+  --bs-badge-padding-y: 0.5em;
+  --bs-badge-font-size: 0.8em;
+  --bs-badge-font-weight: 700;
+  --bs-badge-color: #fff;
+  --bs-badge-border-radius: 0.375rem;
+  display: inline-block;
+  padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+  font-size: var(--bs-badge-font-size);
+  font-weight: var(--bs-badge-font-weight);
+  line-height: 1;
+  color: var(--bs-badge-color);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: var(--bs-badge-border-radius);
+}
+
+.background-normal {
+  background-color: #a4acaf!important;
+  color: #212121 !important;
+}
+
+.background-dragon {
+  background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%)!important;
+  background-color: #53a4cf!important;
+  color: #fff !important;
+}
+
+.background-grass {
+  background-color: #9bcc50!important;
+  color: #212121 !important;
+}
+
+.background-poison {
+  background-color: #b97fc9!important;
+  color: #fff !important;
+}
+
+.background-fire {
+  background-color: #fd7d24!important;
+  color: #fff !important;
+}
+
+.background-water {
+  background-color: #4592c4!important;
+  color: #fff !important;
+}
+
+.background-electric {
+  background-color: #eed535!important;
+  color: #212121 !important;
+}
+
+.background-bug {
+  background-color: #729f3f!important;
+  color: #fff !important;
+}
+
+.background-flying {
+  background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%)!important;
+  background-color: #3dc7ef!important;
+  color: #212121 !important;
+}
+
+.background-fairy {
+  background-color: #fdb9e9!important;
+  color: #212121 !important;
+}
+
+.background-psychic {
+  background-color: #f366b9!important;
+  color: #fff !important;
+}
+
+.background-rock {
+  background-color: #a38c21!important;
+  color: #fff !important;
+}
+
+.background-ice {
+  background-color: #51c4e7!important;
+  color: #212121 !important;
+}
+
+.background-ghost {
+  background-color: #7b62a3!important;
+  color: #fff !important;
+}
+
+.background-steel {
+  background-color: #9eb7b8!important;
+  color: #212121 !important;
+}
+
+.background-fighting {
+  background-color: #d56723!important;
+  color: #fff !important;
+}
+
+.background-ground {
+  background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%)!important;
+  background-color: #f7de3f!important;
+  color: #212121 !important;
+}
+
+
+/*navigation*/
 .nav{
   background-color: #43a1be;
 }
@@ -46,7 +155,6 @@ code {
   display: block;
   margin: auto;
 }
-
 .card-title{
   text-align: center;
   text-transform: capitalize;
@@ -55,7 +163,9 @@ code {
 .card-text{
   padding: 0.5em 0;
 }
-
+.card a{
+  text-decoration: none;
+}
 .card-btn{
   background-color: #8fd053!important;
   border-color: #8fd053!important;

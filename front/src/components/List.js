@@ -1,19 +1,10 @@
 import { useEffect, useState } from "react"
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import pokemonApi from '../api/pokemonApi'
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Stack from 'react-bootstrap/Stack';
-import Container from "react-bootstrap/Container";
-import Toast from 'react-bootstrap/Toast';
-import ToastContainer from 'react-bootstrap/ToastContainer';
+import { Card, Col, Row, Button, Form, Stack, Container, Toast, ToastContainer } from "react-bootstrap"
 
 export default function List() {
 
-  const navigate = useNavigate()
   const [pokemons,setPokemons] = useState([])
   const [searchName, setSearchName] = useState('')
   const [validated, setValidated] = useState(true);
@@ -38,10 +29,6 @@ export default function List() {
     }catch(e){
       console.log(e.message)
     }
-  }
-  
-  const selectPokemon = (id) => {
-    navigate(`/pokemon/${id}`)
   }
 
   const searchPokemon = () => {
@@ -84,13 +71,17 @@ export default function List() {
           {pokemons.map((pokemon, key) => (
             <Col key={pokemon.id_pokemon}>
               <Card className="card">
-                <Card.Img className='card-img' variant="top" src={pokemon.imagen_pokemon} />
+                <Link to={`/pokemon/${pokemon.id_pokemon}`}>
+                  <Card.Img className='card-img' variant="top" src={pokemon.imagen_pokemon} />
+                </Link>
                 <Card.Body>
                   <Card.Title className="card-title">{pokemon.nombre_pokemon}</Card.Title>
                   <Card.Text className="card-text">{pokemon.descripcion_pokemon}</Card.Text>
-                  <div className="card-body-btn">
-                    <Button className='card-btn' onClick={()=>selectPokemon(pokemon.id_pokemon)} >Ver Detalles</Button>
-                  </div>
+                  <Link to={`/pokemon/${pokemon.id_pokemon}`}>
+                    <div className="card-body-btn">
+                      <Button className='card-btn'>Ver Detalles</Button>
+                    </div>
+                  </Link>
                 </Card.Body>
               </Card>
             </Col>
