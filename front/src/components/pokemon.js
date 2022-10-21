@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { ArrowRight } from 'react-bootstrap-icons'
-import { Button, Card,Row, Col, Container,Badge } from 'react-bootstrap'
+import { Button, Card,Row, Col, Container } from 'react-bootstrap'
 import pokemonApi from '../api/pokemonApi'
 
 export default function Pokemon() {
@@ -10,32 +10,55 @@ export default function Pokemon() {
   //const navigate = useNavigate()
   const [pokemonDetail, setPokemonDetail] = useState([])
   const [pokemonType, setPokemonType] = useState([])
+  const [pokemonAbility, setPokemonAbility] = useState([])
+  const [isEvolved, setEvolved] = useState(false)
+  
+  let evoluciones = []
 
   useEffect(()=>{
     getPokemonDetail(id)
     getPokemonType(id)
-  },[])
+    getPokemonAbility(id)
+    verificarEvolucion(id)
+  },[id])
 
   async function getPokemonDetail(id){
     try{
       const response = await pokemonApi.get(`/pokemon/${id}`)
       setPokemonDetail(response.data[0])
-      console.log(response.data[0])
+      setEvolved(response.data[0].evolucion_pokemon)
     }catch(err){
       console.log(err.message)
     }
   }
 
+  async function verificarEvolucion(id){
+    try{
+      if(isEvolved){
+        evoluciones.push(pokemonDetail)
+      }
+      console.log(evoluciones)
+    }catch(err){
+      console.log(err.message)
+    }
+  }
   async function getPokemonType(id){
     try{
       const response = await pokemonApi.get(`/type/${id}`)
       setPokemonType(response.data)
-      console.log(response.data)
     }catch(err){
       console.log(err.message)
     }
   }
 
+  async function getPokemonAbility(id){
+    try{
+      const response = await pokemonApi.get(`/ability/${id}`)
+      setPokemonAbility(response.data)
+    }catch(err){
+      console.log(err.message)
+    }
+  }
 
   return (
     <div>
@@ -68,17 +91,26 @@ export default function Pokemon() {
                     </Row>
                     <Row>
                       <p>Type:</p>
-                      {pokemonType.map((pokemon, key) => (
-                        <Col>
-                          <p className={`badge-type background-${pokemon.nombre_tipo}`}>{pokemon.nombre_tipo}</p>
-                        </Col>
-                      ))}
+                      <div>
+                        {pokemonType.map((pokemon, key) => (
+                          <p key={pokemon.id_tipo} className={`badge-type background-${pokemon.nombre_tipo}`}>{pokemon.nombre_tipo}</p>
+                        ))}
+                      </div>
+                    </Row>
+                    <Row>
+                      <p>Ability:</p>
+                      <ul>
+                        {pokemonAbility.map((pokemon, key) => (
+                          <li key={pokemon.id_habilidad}>{pokemon.nombre_habilidad}</li>
+                        ))}
+                      </ul>
                     </Row>
                   </Card.Body>
                 </Col>
               </Row>
             </Card>
         </Container>
+        {isEvolved ? (
         <Container>
           <h3>Evolutions</h3>
           <Row xs={1} md={2} lg={3} className="g-4">
@@ -95,6 +127,9 @@ export default function Pokemon() {
             </Col>
           </Row>
         </Container>
+        ) : (
+          <p>no evoluciona</p>  
+        )}
       </Container>
     </div>
   )
