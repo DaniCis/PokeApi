@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { ArrowRight } from 'react-bootstrap-icons'
 import { Button, Card,Row, Col, Container } from 'react-bootstrap'

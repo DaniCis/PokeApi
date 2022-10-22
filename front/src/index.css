@@ -212,3 +212,13 @@ code {
   flex-direction: row;
   align-items: baseline;
 }
+
+/*pokedex*/
+.pokedex-container{
+  padding-top: 6em;
+}
+.pokedex-container h3{
+  padding-bottom: 0.5em;
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+}

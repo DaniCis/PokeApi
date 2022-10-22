@@ -2,7 +2,8 @@ const db = require('../database')
 
 const getAllPokemon = async (req ,res , next)=>{
     try{
-        const AllPokemon = await db.query('SELECT id_pokemon, nombre_pokemon, descripcion_pokemon, imagen_pokemon FROM pokemon')
+        const AllPokemon = await db.query('SELECT id_pokemon, nombre_pokemon, descripcion_pokemon, imagen_pokemon FROM pokemon '+
+        'ORDER BY id_pokemon')
         res.status(200).json(AllPokemon.rows)
     }catch(error){
         next(error)
