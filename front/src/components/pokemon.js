@@ -88,12 +88,8 @@ export default function Pokemon() {
           </Link>
         </div>
         <Container className='detail-card'>
+          <h3>{pokemonDetail.nombre_pokemon}  #{pokemonDetail.id_pokemon}</h3>
             <Card>
-              <Row>
-                <Col>
-                  <Card.Title>{pokemonDetail.nombre_pokemon}  #{pokemonDetail.id_pokemon}</Card.Title>
-                </Col>
-              </Row>
               <Row>
                 <Col xs='12' md='6'>
                   <Card.Img className='card-img' variant="top" src={pokemonDetail.imagen_pokemon} />
@@ -142,7 +138,7 @@ export default function Pokemon() {
         {isEvolved === true &&
           <Container>
             <h3>Evolutions</h3>
-            <Row xs={1} md={2} lg={4} className="g-4">
+            <Row xs={1} md={2} lg={4} className="g-4 evolution">
               {pokemonEvolution.map((pokemon, key) => (
                 <div className='evolve-card' key={pokemon.id_pokemon}>
                   <Col>

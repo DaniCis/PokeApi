@@ -210,6 +210,11 @@ code {
 .detail-container{
   padding-top: 6.5em;
 }
+.detail-container h3{
+  text-align: center;
+  padding-bottom: 0.5em;
+  text-transform: capitalize;
+}
 .detail-container a{
   text-decoration: none;
   color: gray;
@@ -223,10 +228,12 @@ code {
 
 
 /*evolution*/
+.evolution{
+  justify-content: center;
+}
 .evolve-card{
   display: flex;
   flex-direction: row;
-  align-items: baseline;
   padding: 1.5em 0;
 }
 .detail-att{
