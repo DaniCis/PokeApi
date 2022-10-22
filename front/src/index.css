@@ -222,3 +222,10 @@ code {
   text-align: center;
   font-family: 'Bebas Neue', cursive;
 }
+
+/*Media query*/
+@media (max-width: 768px) {
+  .no-container img{
+    max-width: 75%;
+  }
+}
