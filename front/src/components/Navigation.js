@@ -23,6 +23,7 @@ export default function Navigation() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav"  />
           <Navbar.Collapse className="justify-content-end">
             <Nav className='nav-link'>
+              <Nav.Link href='/'>Home</Nav.Link>
               <Nav.Link href='/pokedex'>Pokédex</Nav.Link>
               <Nav.Link href='/'>About</Nav.Link>
               <Nav.Link href='/'>Contact us</Nav.Link>

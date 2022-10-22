@@ -1,6 +1,6 @@
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { ArrowRight } from 'react-bootstrap-icons'
+import { ArrowLeftShort, Icon1Circle, Icon3Circle, Icon2Circle } from 'react-bootstrap-icons'
 import { Button, Card,Row, Col, Container } from 'react-bootstrap'
 import pokemonApi from '../api/pokemonApi'
 
@@ -43,6 +43,7 @@ export default function Pokemon() {
       }
       var temporal  = removeDuplicates(pokemonEvolution, "id_pokemon")
       setPokemonEvolution(temporal)
+      console.log(temporal)
     }catch(err){
       console.log(err.message)
     }
@@ -78,8 +79,14 @@ export default function Pokemon() {
 
   return (
     <div>
-      <Container>
-        <Container>
+      <Container className='detail-container'>
+        <div>
+          <Link to='/'>
+            <ArrowLeftShort className='arrow' color="orange" size={26}/>
+            <span>Regresar</span>
+          </Link>
+        </div>
+        <Container className='detail-card'>
             <Card>
               <Row>
                 <Col>
@@ -126,29 +133,35 @@ export default function Pokemon() {
               </Row>
             </Card>
         </Container>
-        {isEvolved ? (
-        <Container>
-          <h3>Evolutions</h3>
-          <Row xs={1} md={2} lg={3} className="g-4">
-          {pokemonEvolution.map((pokemon, key) => (
-            <div className='evolve-card' key={pokemon.id_pokemon}>
-              <Card className="card">
-                <Card.Img className='card-img' variant="top" src={pokemon.imagen_pokemon} />
-                <Card.Body>
-                  <Card.Title className="card-title">{pokemon.nombre_pokemon}</Card.Title>
-                  <div className="card-body-btn">
-                    <Button className='card-btn' >Ver Detalles</Button>
-                  </div>
-                </Card.Body>
-              </Card>
-            <ArrowRight className='arrow' color="brown" size={96}/>
-            </div>
-          ))}
-          </Row>
-        </Container>
-        ) : (
-          <p>no evoluciona</p>  
-        )}
+        {isEvolved === true &&
+          <Container>
+            <h3>Evolutions</h3>
+            <Row xs={1} md={2} lg={4} className="g-4">
+              {pokemonEvolution.map((pokemon, key) => (
+                <div className='evolve-card' key={pokemon.id_pokemon}>
+                  <Col>
+                  { key+1 === 1 && <Icon1Circle size={30} color='orange'></Icon1Circle>}
+                  { key+1 === 2 && <Icon2Circle size={30} color='orange'></Icon2Circle>}
+                  { key+1 === 3 && <Icon3Circle size={30} color='orange'></Icon3Circle>}
+                  <Card className="card">
+                    <Link to={`/pokemon/${pokemon.id_pokemon}`}>
+                      <Card.Img className='card-img' variant="top" src={pokemon.imagen_pokemon} />
+                    </Link>
+                    <Card.Body>
+                      <Card.Title className="card-title">{pokemon.nombre_pokemon}</Card.Title>
+                      <Link to={`/pokemon/${pokemon.id_pokemon}`}>
+                      <div className="card-body-btn">
+                        <Button className='card-btn' >Ver Detalles</Button>
+                      </div>
+                      </Link>
+                    </Card.Body>
+                  </Card>
+                  </Col>
+                </div>
+              ))}
+            </Row>
+          </Container>
+        }      
       </Container>
     </div>
   )

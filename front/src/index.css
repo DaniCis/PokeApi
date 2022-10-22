@@ -206,6 +206,22 @@ code {
   background-color: #a5e569!important;
 }
 
+/*pokemon detail page*/
+.detail-container{
+  padding-top: 6.5em;
+}
+.detail-container a{
+  text-decoration: none;
+  color: gray;
+}
+.detail-card{
+  padding: 2em 5em;
+}
+.detail-card img{
+  max-width: 50%;
+}
+
+
 /*evolution*/
 .evolve-card{
   display: flex;
