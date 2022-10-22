@@ -114,7 +114,7 @@ export default function Pokemon() {
                       </div>
                     </Row>
                     <Row>
-                      <p>Ability:</p>
+                      <p>Abilities:</p>
                       <ul>
                         {pokemonAbility.map((pokemon, key) => (
                           <li key={pokemon.id_habilidad}>{pokemon.nombre_habilidad}</li>

@@ -10,19 +10,19 @@ export default function Navigation() {
   
   return (
     <div>
-      <Navbar className='nav' collapseOnSelect  expand='sm' variant='primary' >
+      <Navbar fixed="top" className='nav' collapseOnSelect  expand='sm' variant='primary' >
         <Container>
           <Navbar.Brand onClick={()=>main()}>
             <img
-              src="/logo_transparent.png"
-              width="150"
-              height="80"
+              src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
+              width="120"
+              height="50"
               className="d-inline-block align-top"
               alt="React Bootstrap logo"
             /></Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav"  />
           <Navbar.Collapse className="justify-content-end">
-            <Nav>
+            <Nav className='nav-link'>
               <Nav.Link href='/'>Pokédex</Nav.Link>
               <Nav.Link href='/'>About</Nav.Link>
               <Nav.Link href='/'>Contact us</Nav.Link>

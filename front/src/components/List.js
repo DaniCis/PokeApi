@@ -26,6 +26,7 @@ export default function List() {
     try{
       const response = await pokemonApi.get(`/pokemon/search/${name}`)
       setPokemons(response.data)
+      console.log(response.data)
     }catch(e){
       console.log(e.message)
     }
@@ -48,6 +49,10 @@ export default function List() {
 
   return (
     <div>
+      <Container className="header-container">
+        <h3>Poke Api Challenge</h3>
+        <span>All the information from all Pokemon in the world in just one place!</span>
+      </Container>
       <Container className='search-container'>
         <Stack className='search' direction="horizontal" gap={3}>
             <Form.Group>
@@ -66,28 +71,42 @@ export default function List() {
             <Button variant="outline-danger"  onClick={() => {clearSearch()}}>Clear</Button>
         </Stack>
       </Container>
-      <Container className="card-container">
-        <Row xs={1} md={2} lg={4} className="g-4">
-          {pokemons.map((pokemon, key) => (
-            <Col key={pokemon.id_pokemon}>
-              <Card className="card">
-                <Link to={`/pokemon/${pokemon.id_pokemon}`}>
-                  <Card.Img className='card-img' variant="top" src={pokemon.imagen_pokemon} />
-                </Link>
-                <Card.Body>
-                  <Card.Title className="card-title">{pokemon.nombre_pokemon}</Card.Title>
-                  <Card.Text className="card-text">{pokemon.descripcion_pokemon}</Card.Text>
+      {pokemons.length > 0 && 
+        <Container className="card-container">
+          <Row xs={1} md={2} lg={4} className="g-4">
+            {pokemons.map((pokemon, key) => (
+              <Col key={pokemon.id_pokemon}>
+                <Card className="card">
                   <Link to={`/pokemon/${pokemon.id_pokemon}`}>
-                    <div className="card-body-btn">
-                      <Button className='card-btn'>Ver Detalles</Button>
-                    </div>
+                    <Card.Img className='card-img' variant="top" src={pokemon.imagen_pokemon} />
                   </Link>
-                </Card.Body>
-              </Card>
+                  <Card.Body>
+                    <Card.Title className="card-title">{pokemon.nombre_pokemon} #{pokemon.id_pokemon}</Card.Title>
+                    <Card.Text className="card-text">{pokemon.descripcion_pokemon}</Card.Text>
+                    <Link to={`/pokemon/${pokemon.id_pokemon}`}>
+                      <div className="card-body-btn">
+                        <Button className='card-btn'>Ver Detalles</Button>
+                      </div>
+                    </Link>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      }
+      {pokemons.length == 0 && 
+        <Container className="no-container">
+          <Row>
+            <Col className="no-results">
+              <img src='https://brandora.de/images/package_not_found.png'/>
+              <h4>No results found</h4>
+              <p>We couldn't find what you're looking for.</p>
+              <Button variant="warning"  onClick={() => {clearSearch()}}>Go back</Button>
             </Col>
-          ))}
-        </Row>
-      </Container>
+          </Row>
+        </Container>
+      }
     </div>
   )
 }
