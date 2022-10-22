@@ -227,6 +227,16 @@ code {
   display: flex;
   flex-direction: row;
   align-items: baseline;
+  padding: 1.5em 0;
+}
+.detail-att{
+  font-weight: bold;
+}
+.detail-att span{
+  font-weight: normal;
+}
+.detail-list{
+  list-style: none!important;
 }
 
 /*pokedex*/

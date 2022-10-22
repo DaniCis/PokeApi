@@ -19,7 +19,7 @@ export default function Pokemon() {
     getPokemonType(id)
     getPokemonAbility(id)
     getPokemonEvolution(id)
-  },[id])
+  },[])
 
   async function getPokemonDetail(id){
     try{
@@ -41,6 +41,7 @@ export default function Pokemon() {
       }else{
         pokemonEvolution.push(response.data[0])
       }
+      console.log(pokemonEvolution)
       var temporal  = removeDuplicates(pokemonEvolution, "id_pokemon")
       setPokemonEvolution(temporal)
       console.log(temporal)
@@ -83,7 +84,7 @@ export default function Pokemon() {
         <div>
           <Link to='/'>
             <ArrowLeftShort className='arrow' color="orange" size={26}/>
-            <span>Regresar</span>
+            <span>back</span>
           </Link>
         </div>
         <Container className='detail-card'>
@@ -102,18 +103,18 @@ export default function Pokemon() {
                     <Card.Text>{pokemonDetail.descripcion_pokemon}</Card.Text>
                     <Row>
                       <Col>
-                        <p>Height:&nbsp;
+                        <p className='detail-att'>Height:&nbsp;
                           <span>{pokemonDetail.altura_pokemon}m.</span>
                         </p>
                       </Col>
                       <Col>
-                        <p>Weight:&nbsp;
+                        <p className='detail-att'>Weight:&nbsp;
                           <span>{pokemonDetail.peso_pokemon}kg.</span>
                         </p>
                       </Col>
                     </Row>
                     <Row>
-                      <p>Type:</p>
+                      <p className='detail-att'>Type:</p>
                       <div>
                         {pokemonType.map((pokemon, key) => (
                           <p key={pokemon.id_tipo} className={`badge-type background-${pokemon.nombre_tipo}`}>{pokemon.nombre_tipo}</p>
@@ -121,13 +122,18 @@ export default function Pokemon() {
                       </div>
                     </Row>
                     <Row>
-                      <p>Abilities:</p>
+                      <p className='detail-att'>Abilities:</p>
                       <ul>
                         {pokemonAbility.map((pokemon, key) => (
-                          <li key={pokemon.id_habilidad}>{pokemon.nombre_habilidad}</li>
+                          <li className='detail-list' key={pokemon.id_habilidad}>{pokemon.nombre_habilidad}</li>
                         ))}
                       </ul>
                     </Row>
+                    {isEvolved === false && (
+                      <Row>
+                        <p className='detail-att'>Pokemon with no evolutions</p>
+                      </Row>
+                    )}
                   </Card.Body>
                 </Col>
               </Row>
@@ -161,7 +167,7 @@ export default function Pokemon() {
               ))}
             </Row>
           </Container>
-        }      
+        }    
       </Container>
     </div>
   )
