@@ -7,7 +7,6 @@ import pokemonApi from '../api/pokemonApi'
 export default function Pokemon() {
 
   const {id} = useParams()
-  //const navigate = useNavigate()
   const [pokemonDetail, setPokemonDetail] = useState([])
   const [pokemonType, setPokemonType] = useState([])
   const [pokemonAbility, setPokemonAbility] = useState([])

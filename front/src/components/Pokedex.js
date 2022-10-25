@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react'
-import { ArrowRight } from 'react-bootstrap-icons'
 import { Button, Card,Row, Col, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import pokemonApi from '../api/pokemonApi'
-
 
 export default function Pokedex() {
 
@@ -21,7 +19,6 @@ export default function Pokedex() {
       console.log(err.message)
     }
   }
-
 
   return (
     <div>
