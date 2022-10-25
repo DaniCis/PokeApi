@@ -20,7 +20,7 @@ Clone this repo and install the dependencies
 
 ```
 $ git clone https://github.com/DaniCis/PokeApi.git
-$ cd PokeApi
+$ cd PokeApi/front
 $ npm install
 $ npm start
 ```
